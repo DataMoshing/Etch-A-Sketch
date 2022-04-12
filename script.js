@@ -1,12 +1,11 @@
 "use strict"
 
-const divContainer = document.querySelector(".container");
+const gridContainer = document.querySelector(".grid-container");
 
 for (let i = 0; i < 256; i++){
-    let divs = document.createElement("div")
-    divContainer.append(divs)
-    // divs.classList.add("square")
-    divs.style.width = "50px";
-    divs.style.height = "50px";
-    divs.style.outline = "solid #000000"
+    let gridCells = document.createElement("div")
+    gridContainer.append(gridCells)
+    gridCells.style.width = "35px";
+    gridCells.style.height = "35px";
+    gridCells.style.outline = "solid 1px #000000"
 }
