@@ -1,3 +1,13 @@
-div{
-    display: inline-block;
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 10%;
 }
+
+
+.grid-container {
+    display: grid;
+    justify-content:center;
+    grid-template-columns: repeat(16, 35px);
+}
+  
