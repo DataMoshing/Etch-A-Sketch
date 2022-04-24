@@ -1,24 +1,43 @@
 "use strict"
 
 const gridContainer = document.querySelector(".grid-container");
-let gridFillClass = document.getElementsByClassName("gridFill")
+const gridFill = document.getElementsByClassName("gridFillClass");
+const clearBtn = document.querySelector(".clearBtn");
+const gridCells = document.createElement("div");
 
-// Created 16x16 grid
-for (let i = 0; i < 256; i++) {
-    let gridCells = document.createElement("div")
-    gridContainer.appendChild(gridCells);
-    gridCells.style.width = "35px";
-    gridCells.style.height = "35px";
-    gridCells.style.outline = "solid 1px #000000";
-    gridCells.classList.add("gridFill")
+function newGrid (rows,columns){
+    gridContainer.style.setProperty("--grid-rows", rows);
+    gridContainer.style.setProperty("--grid-columns", columns);
+    for(let i = 0; i < (rows * columns); i++){
+        const gridCells = document.createElement("div");
+        gridContainer.append(gridCells)
+        gridCells.classList.add("gridFillClass")
+        gridCells.style.outline = "solid 1px #D3D3D3";
+    }
 }
 
+newGrid(2,2)
+
+// Changes divs on hover 
 function colorGrid(){
-for(let j = 0; j < gridFillClass.length; j++){
-    gridFillClass[j].addEventListener("mouseover", function(e){
+for(let j = 0; j < gridFill.length; j++){
+    gridFill[j].addEventListener("mouseover", function(e){
         e.target.style.background = "black"
     })
   }
 }
 
-colorGrid()
+colorGrid();
+
+// Clears entire grid
+function clearGrid() {
+    while (gridContainer.hasChildNodes()) {
+        gridContainer.removeChild(gridContainer.lastChild);
+    }
+}
+
+clearBtn.addEventListener("click", function (e){
+    clearGrid();
+});
+
+
