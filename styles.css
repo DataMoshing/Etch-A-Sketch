@@ -1,13 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=VT323&display=swap');
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'VT323', monospace;
+    font-weight: 200;
+    font-size: 50px;
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+button {
+    background-color: 		#303030;
+    border-radius: 5px;
+    border: 4px double #cccccc;
+    color: #F8F8F8;
+    font-size: 25px;
+    padding: 10px;
+    width: 120px;
+    margin: 5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'VT323', monospace;
+    cursor: pointer;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
-    padding: 10%;
+    /* padding: 5%; */
 }
 
-
+:root {
+    --grid-columns: 1;
+    --grid-rows: 1;
+}
 .grid-container {
     display: grid;
     justify-content:center;
-    grid-template-columns: repeat(16, 35px);
-}
-  
+    grid-template-columns: repeat(var(--grid-rows), 1fr);
+    grid-template-rows: repeat(var(--grid-columns), 1fr);
+    width: 500px;
+    height: 500px;
+} 
+
