@@ -26,7 +26,7 @@ function createGrid() {
 
 createGrid()
 
-// Changes divs on hover 
+
 function colorGrid(){
 for(let j = 0; j < gridFill.length; j++){
     gridFill[j].addEventListener("mouseover", function(e){
@@ -37,7 +37,7 @@ for(let j = 0; j < gridFill.length; j++){
 
 colorGrid();
 
-// Clears entire grid
+
 function clearGrid() {
     while (gridContainer.hasChildNodes()) {
         gridContainer.removeChild(gridContainer.lastChild);
