@@ -8,7 +8,7 @@ const gridCells = document.createElement("div");
 function createGrid() {
 	const gridContainer = document.querySelector(".grid-container");
 	let gridSize = Number(prompt("Please enter grid size (less than 100)"));
-    if(gridSize <= 100) {
+    if(gridSize <= 100 && gridSize >= 1) {
 	let gridMultiplier = gridSize * gridSize;
 	gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 	gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
