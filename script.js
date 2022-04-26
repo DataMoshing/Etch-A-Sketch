@@ -19,7 +19,7 @@ function createGrid() {
 		gridCells.style.outline = "solid 1px #D3D3D3";
             }
         } else {
-            gridSize == isNaN;
+            gridSize == isNaN || gridSize == "";
             createGrid();
     }
 }
